@@ -1,0 +1,23 @@
+services:
+  - type: web_service
+    name: mnm-backend
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    root: "backend"
+    buildCommand: pip install -r "backend/requirements.txt"
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+
+  - type: static_site
+    name: mnm-frontend
+    env: static
+    region: oregon
+    plan: free
+    branch: main
+    root: "law-firm-web-app"
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://<YOUR_BACKEND_SERVICE>.onrender.com/api"
