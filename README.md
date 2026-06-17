@@ -107,3 +107,4 @@ cd frontend && npm run build
 # Serves the built files from frontend/build/
 # Point nginx / Apache to frontend/build/ and proxy /api → Flask
 ```
+# Law-firm-web-2.0
