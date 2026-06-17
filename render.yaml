@@ -20,4 +20,4 @@ services:
     staticPublishPath: build
     envVars:
       - key: REACT_APP_API_URL
-        value: "https://<YOUR_BACKEND_SERVICE>.onrender.com/api"
+        value: "https://law-firm-web-2-0-2.onrender.com"
